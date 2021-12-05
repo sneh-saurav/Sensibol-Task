@@ -10,13 +10,17 @@ import (
 	"github.com/zmb3/spotify"
 )
 
+
+// clientID and clientSecret we can find in our spotify for developers account
 const clientID = "9613716112a346febac9260df8882781"
 const clientSecret = "0cf561a2e5a845779b81e796acbca349"
 
-var link = "https://open.spotify.com/track/6DDux0xQXq8DcEgdaWWtC7?si="
+var link = "https://open.spotify.com/track/6DDux0xQXq8DcEgdaWWtC7?si="       // This is a basic link where we are attaching the track ID 
 var TrackURL []string
 
 func main() {
+	
+	//Defining the configurations
 	config := &clientcredentials.Config{
 		ClientID:     clientID,
 		ClientSecret: clientSecret,
@@ -43,5 +47,5 @@ func main() {
 			TrackURL = append(TrackURL, link)
 		}
 	}
-	fmt.Println("Spotify Link for the song", TrackURL)
+	fmt.Println("Spotify Link for the song", TrackURL)  // Printing the URL of track results after searching
 }
